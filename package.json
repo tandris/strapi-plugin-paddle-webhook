@@ -1,5 +1,5 @@
 {
-  "name": "strapi-plugin-strapi-plugin-paddle-webhook",
+  "name": "strapi-plugin-paddle-webhook",
   "version": "1.0.0-beta.1",
   "description": "Paddle payment provider webhook plugin for Strapi headless CMS",
   "strapi": {
