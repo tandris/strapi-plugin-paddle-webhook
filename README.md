@@ -1,6 +1,6 @@
 # Strapi plugin strapi-plugin-paddle-webhook
 
-Plugin handling [Paddle](https://developer.paddle.com/webhook-reference/intro) webhook alerts.
+Plugin to handle [Paddle's webhook alerts](https://developer.paddle.com/webhook-reference/intro).
 
 ## How it works
 --------
@@ -62,10 +62,9 @@ Plugin Configuration:
 1. Run strapi `strapi develop`
 2. Enable public access for the endpoint under Settings/Roles/Public
     ![alt text](./res/permissions.png "Strapi permission settings")    
-3. The webhook endpoint will be available at: `http://localhost:1337/paddle-webhook/webhook` (POST)
-4. After deploying strapi to your server with the plugin installed, configure Paddle under Developer Tools/Alerts / Webhooks and set the public endpoint under the `URL for receiving webhook alerts` field. 
+3. The webhook endpoint is listening at: `http://localhost:1337/paddle-webhook/webhook` (POST)
+4. After deploying strapi to your external server, you have to configure Paddle to use the webhook URL. Go to Paddle Dashboard, and under Developer Tools/Alerts / Webhooks and set the public endpoint under the `URL for receiving webhook alerts` field. 
 5. The fulfillment endpoints must be set for each product separately, if you have active products you have to update them and use the same URL: `http://localhost:1337/paddle-webhook/webhook`.   
-
 
 ### IV. Testing
 
@@ -79,10 +78,10 @@ To test the endpoint in a local environment:
 ## Customizing the workflow 
 --------
  
-When an alert has been received from Paddle the plugin saves it into the database (Paddle order model) in a generic format. 
-
-In most cases, you have to do some additional process based on the data (update the user, for example). 
-You have two options to do this.
+When an alert has been received from Paddle the plugin saves it into the database (Paddle order model) but in most cases saving the data is not enough, you have to do some additional logic (update the user, for example). 
+You have two options to do this:
+- create lifecycle hooks on the PaddleOrder model
+- implement the plugins `afterVerified` method
 
 #### 1. Overwriting the model lifecycles
   
