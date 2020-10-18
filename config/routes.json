@@ -1,0 +1,12 @@
+{
+  "routes": [
+    {
+      "method": "POST",
+      "path": "/webhook",
+      "handler": "strapi-plugin-paddle-webhook.webhook",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

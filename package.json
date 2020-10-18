@@ -1,0 +1,44 @@
+{
+  "name": "strapi-plugin-strapi-plugin-paddle-webhook",
+  "version": "1.0.0-beta.1",
+  "description": "Paddle payment provider webhook plugin for Strapi headless CMS",
+  "strapi": {
+    "name": "strapi-plugin-paddle-webhook",
+    "icon": "plug",
+    "description": "Paddle payment provider webhook plugin"
+  },
+  "dependencies": {
+    "php-serialize": "^4.0.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:tandris/strapi-plugin-paddle-webhook"
+  },
+  "author": "tandris",
+  "maintainers": [
+    {
+      "name": "tandris",
+      "url": "https://github.com/tandris"
+    }
+  ],
+  "private": false,
+  "scripts": {
+    "build-ts": "tsc",
+    "watch-ts": "tsc -w"
+  },
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^14.11.10",
+    "typescript": "^4.0.3"
+  },
+  "keywords": [
+    "strapi",
+    "plugin",
+    "paddle",
+    "payment"
+  ]
+}

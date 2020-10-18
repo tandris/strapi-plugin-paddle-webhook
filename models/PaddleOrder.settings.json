@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "paddle_order",
+  "info": {
+    "name": "Paddle order",
+    "description": "Paddle orders"
+  },
+  "options": {
+    "timestamps": [
+      "createdAt",
+      "updatedAt"
+    ]
+  },
+  "attributes": {
+    "user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "eventTime": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "alertId": {
+      "type": "string"
+    },
+    "alertName": {
+      "type": "string"
+    },
+    "passthrough": {
+      "type": "string"
+    },
+    "payload": {
+      "type": "json"
+    }
+  }
+}
